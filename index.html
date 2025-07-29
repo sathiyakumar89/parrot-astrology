@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parrot Astrology</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parrot Astrology AI</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>🦜 Parrot Astrology 🔮</h1>
-    <form id="userForm">
-      <input type="text" id="name" placeholder="Enter Your Name" required>
-      <input type="date" id="dob" required>
-      <button type="submit">Predict My Fortune</button>
-    </form>
+    <h1>🦜 Parrot Astrology AI</h1>
+    <div id="card-container" class="card-area">Parrot is choosing your card...</div>
 
-    <div id="animationArea" class="hidden">
-      <p>🦜 Parrot is selecting a card...</p>
-      <div id="cards">
-        <!-- Cards will appear here -->
-      </div>
+    <div class="card-wrapper">
+      <img id="card-image" class="card-image" src="" alt="Selected Card" />
+      <div id="scratch-overlay" class="scratch-area">👆 Tap to Scratch</div>
     </div>
 
-    <div id="scratchCard" class="hidden">
-      <p>Scratch to reveal your card!</p>
-      <canvas id="scratchCanvas"></canvas>
-    </div>
+    <p id="prediction" class="prediction-text"></p>
+    <p id="loading" class="loading-text">🔮 Loading your prediction...</p>
 
-    <div id="result" class="hidden">
-      <img id="finalImage" src="" alt="Selected Image">
-      <p id="prediction"></p>
-      <button onclick="shareResult()">Share My Prediction</button>
+    <!-- Share Buttons -->
+    <div id="share-buttons" class="share-buttons" style="display:none;">
+      <p>📤 Share Your Prediction:</p>
+      <a id="share-whatsapp" target="_blank">WhatsApp</a> |
+      <a id="share-facebook" target="_blank">Facebook</a> |
+      <a id="share-instagram" target="_blank">Instagram</a>
     </div>
   </div>
 
