@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parrot Astrology AI</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>🐦 Parrot Astrology AI 🔮</h1>
-    
-    <div class="card-area">
-      <p>Click below to begin your prediction journey...</p>
+  <div class="app">
+    <h1>🦜 Parrot Astrology AI</h1>
+    <input type="text" id="username" placeholder="Enter your name" />
+    <input type="date" id="dob" placeholder="Date of Birth" />
+    <button id="startBtn">Start</button>
+
+    <div id="card-container" class="hidden">
+      <p class="parrot-animation">Parrot is selecting your destiny card...</p>
+      <div class="cards">
+        <!-- Cards will be generated here -->
+      </div>
     </div>
 
-    <button id="startButton">Start Parrot Prediction</button>
-
-    <div class="card-display">
-      <img class="card-image" src="" alt="Your Card" />
-      <div class="scratch-area"></div>
+    <div id="selected-card" class="hidden">
+      <canvas id="scratch-canvas"></canvas>
+      <p id="reveal-text">Scratch to reveal your card!</p>
+      <div id="prediction" class="hidden"></div>
+      <button id="shareBtn" class="hidden">🔗 Share</button>
     </div>
-
-    <p class="prediction-text" style="display: none;"></p>
   </div>
 
-  <footer>
-    <p>Made with ❤️ SK | <a href="https://github.com/YOURUSERNAME/YOURREPO" target="_blank">GitHub</a></p>
-  </footer>
-
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
-
