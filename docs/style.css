@@ -1,125 +1,120 @@
-/* Reset & Body */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #f0f4f8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
   text-align: center;
+  margin: 0;
+  padding: 20px;
 }
 
-/* Title */
 h1 {
-  margin-top: 20px;
-  font-size: 2em;
-  color: #4b0082;
+  font-size: 2.5rem;
+  color: #3e3e3e;
+  margin-bottom: 20px;
 }
 
-/* Form */
 form {
-  margin: 20px;
+  margin-bottom: 30px;
 }
+
 input[type="text"],
 input[type="date"] {
   padding: 10px;
+  font-size: 1rem;
   margin: 10px;
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
   border-radius: 8px;
+  width: 200px;
 }
+
 button {
   padding: 10px 20px;
-  background-color: #4b0082;
+  font-size: 1rem;
+  background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
+
 button:hover {
-  background-color: #6a0dad;
+  background-color: #45a049;
 }
 
-/* Card container */
 #card-container {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  position: relative;
+  margin: 20px auto;
+  width: 220px;
+  height: 320px;
 }
 
-/* Card styling */
 .card {
   width: 200px;
   height: 300px;
-  background: url('https://i.imgur.com/I2eA4A9.png') no-repeat center center / cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  margin: auto;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  overflow: hidden;
   position: relative;
-  cursor: pointer;
-  transition: transform 0.4s ease-in-out;
-}
-.card:hover {
-  transform: scale(1.05);
-}
-.card.zoomed {
-  transform: scale(1.5);
-  z-index: 10;
 }
 
-/* Canvas scratch layer */
 canvas {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 12px;
+  border-radius: 16px;
   cursor: crosshair;
 }
 
-/* Prediction box */
-#prediction {
-  max-width: 80%;
-  margin: 30px auto;
-  padding: 20px;
-  font-size: 1.2em;
-  background-color: #fff;
-  border-left: 5px solid #4b0082;
-  border-radius: 8px;
-  display: none;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  color: #333;
-}
-
-/* Parrot animation */
 #parrot {
-  width: 100px;
-  height: auto;
-  margin-top: 20px;
-  animation: fly 2s ease-in-out infinite;
-}
-@keyframes fly {
-  0%, 100% {
-    transform: translateY(0) rotate(-5deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(5deg);
-  }
+  width: 200px;
+  animation: fly 2s ease-in-out infinite alternate;
 }
 
-/* Share buttons */
-#share-buttons {
-  margin-top: 20px;
+@keyframes fly {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-15px); }
 }
+
+.zoomed {
+  animation: zoomIn 1s ease forwards;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+#prediction {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 15px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: none;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#share-buttons {
+  margin-top: 15px;
+}
+
 .share-link {
   display: inline-block;
-  margin: 5px;
-  padding: 10px;
+  margin: 0 10px;
+  padding: 8px 14px;
+  background-color: #008CBA;
   color: white;
-  background-color: #4b0082;
-  border-radius: 6px;
   text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
+
 .share-link:hover {
-  background-color: #6a0dad;
+  background-color: #005f75;
 }
