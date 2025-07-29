@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parrot Astrology AI</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
+  <div class="container">
     <h1>🦜 Parrot Astrology AI</h1>
-    <input type="text" id="username" placeholder="Enter your name" />
-    <input type="date" id="dob" placeholder="Date of Birth" />
-    <button id="startBtn">Start</button>
+    <form id="user-form">
+      <input type="text" id="username" placeholder="Enter your name" required>
+      <input type="date" id="dob" required>
+      <button type="submit">Get Prediction</button>
+    </form>
 
     <div id="card-container" class="hidden">
-      <p class="parrot-animation">Parrot is selecting your destiny card...</p>
-      <div class="cards">
-        <!-- Cards will be generated here -->
-      </div>
+      <div id="parrot-animation">🦜</div>
+      <div id="cards"></div>
     </div>
 
-    <div id="selected-card" class="hidden">
-      <canvas id="scratch-canvas"></canvas>
-      <p id="reveal-text">Scratch to reveal your card!</p>
-      <div id="prediction" class="hidden"></div>
-      <button id="shareBtn" class="hidden">🔗 Share</button>
+    <div id="scratch-container" class="hidden">
+      <canvas id="scratch-canvas" width="300" height="400"></canvas>
+      <div id="hidden-image"></div>
+    </div>
+
+    <div id="prediction" class="hidden"></div>
+    <div id="share-buttons" class="hidden">
+      <button onclick="shareResult()">📤 Share on WhatsApp</button>
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
